@@ -52,7 +52,7 @@ for symbol in tickers:
     if price < (iv * 0.7) and sentiment == "Bullish":
         action = "🔥 STRONG BUY"
     elif price > iv:
-        action = ⚠️ SELL / OVERVALUED"
+        action = "⚠️ SELL / OVERVALUED"
 
     data_list.append({
         "Ticker": symbol,
@@ -71,4 +71,5 @@ st.sidebar.header("Live Notifications")
 buys = df[df['Recommendation'] == "🔥 STRONG BUY"]
 if not buys.empty:
     for i, row in buys.iterrows():
+
         st.sidebar.success(f"BUY ALERT: {row['Ticker']} is 30% undervalued with positive news!")
