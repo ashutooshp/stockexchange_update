@@ -1,10 +1,10 @@
-import nltk
-nltk.download('punkt')
-nltk.download('brown')
 import streamlit as st
 import yfinance as yf
 import pandas as pd
 from textblob import TextBlob
+import nltk
+nltk.download('punkt')
+nltk.download('brown')
 import requests
 
 # Function to calculate Intrinsic Value (Graham Formula)
@@ -73,3 +73,4 @@ if not buys.empty:
     for i, row in buys.iterrows():
 
         st.sidebar.success(f"BUY ALERT: {row['Ticker']} is 30% undervalued with positive news!")
+
